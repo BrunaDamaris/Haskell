@@ -29,9 +29,7 @@ diferenca _ [] = []
 diferenca (x:xs) y = if(pertence x y) then diferenca xs y else [x] ++ diferenca xs y
 
 uniao:: [Integer] -> [Integer] -> [Integer]
-uniao [] _ = []
-uniao _ [] = []
-uniao (x:xs) (y:ys) = [x,y] ++ uniao xs ys
+uniao a b = a ++ b
 
 formapar:: Integer -> [Integer] -> [(Integer,Integer)]
 formapar x [] = []
