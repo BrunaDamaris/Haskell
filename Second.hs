@@ -33,7 +33,12 @@ uniao [] _ = []
 uniao _ [] = []
 uniao (x:xs) (y:ys) = [x,y] ++ uniao xs ys
 
+formapar:: Integer -> [Integer] -> [(Integer,Integer)]
+formapar x [] = []
+formapar x (a:as) = [(x,a)] ++ formapar x as
+
 paresentrelistas:: [Integer] -> [Integer] -> [(Integer,Integer)]
-paresentrelistas [] _= []
-paresentrelistas _ []= []
-paresentrelistas (x:xs) (y:ys) = [(x,y)] ++ paresentrelistas xs ys
+paresentrelistas [] y = []
+paresentrelistas (x:xs) y = formapar x y ++ paresentrelistas xs y
+
+
