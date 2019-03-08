@@ -28,3 +28,11 @@ gRVertice v [] = 0
 gRVertice v ((o,d):as) = if(v == d)
                          then 1 + gRVertice v as
                          else gRVertice v as
+
+source:: Integer->[(Integer,Integer)]->Bool
+source v [] = False
+source v g = if(((gEVertice v g) >= 1) && ((gRVertice v g) == 0)) then True else False
+
+sumi:: Integer->[(Integer,Integer)]->Bool
+sumi v [] = False
+sumi v g = if(((gEVertice v g) == 0) && ((gRVertice v g) >= 1)) then True else False
