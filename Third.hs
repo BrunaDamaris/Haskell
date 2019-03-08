@@ -17,3 +17,14 @@ gVertice v ((o,d):as) = if(v == o)
                              then 1 + gVertice v as
                              else gVertice v as
 
+gEVertice:: Integer->[(Integer,Integer)]->Integer
+gEVertice v [] = 0
+gEVertice v ((o,d):as) = if(v == o)
+                         then 1 + gEVertice v as
+                         else gEVertice v as
+
+gRVertice:: Integer->[(Integer,Integer)]->Integer
+gRVertice v [] = 0
+gRVertice v ((o,d):as) = if(v == d)
+                         then 1 + gRVertice v as
+                         else gRVertice v as
