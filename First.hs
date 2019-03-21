@@ -1,5 +1,6 @@
 sucessor:: Integer -> Integer
-sucessor x = x+1
+sucessor 0 = 1
+sucessor x = 1 + sucessor(x-1)
 
 somaLista:: [Integer] -> Integer
 somaLista [] = 0
